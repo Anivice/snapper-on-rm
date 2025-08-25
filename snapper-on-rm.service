@@ -1,0 +1,14 @@
+[Unit]
+Description=Snapper Create Snapshot on File Removel
+After=local-fs.target
+
+[Service]
+Type=simple
+ExecStart=/opt/snapper-on-rm.sh
+ExecReload=/bin/kill -HUP $MAINPID
+KillMode=process
+Restart=on-failure
+RestartSec=42s
+
+[Install]
+WantedBy=multi-user.target

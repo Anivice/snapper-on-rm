@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+echo "Executing \`rm ${@}\`, creating redundancy..."
+echo snap > /tmp/snapper-on-rm
+sleep .3
+/usr/bin/rm ${@}
